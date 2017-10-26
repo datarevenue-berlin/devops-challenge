@@ -16,7 +16,7 @@ This should be straightforward on all linux and osx systems. Windows users are p
 - This should take you between 20-60 minutes
 - Use python3
 - The dockerfile should inherit from `ubuntu:16.04` 
-- You are not allowed to change any files.
+- You are not allowed to change any files (except the dockerfile).
 - execute bootstrap.sh and email us the output along with your solution.
 
 
