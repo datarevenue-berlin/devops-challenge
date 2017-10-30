@@ -25,7 +25,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    working_dir: /root
+    working_dir: /work
     command: python3 cluster_test.py
     depends_on:
       - dask-scheduler

@@ -1,8 +1,6 @@
-FROM ubuntu:16.04
-ENV LC_ALL=C.UTF-8
-ENV LANG=C.UTF-8
+FROM alpine:latest
 
-COPY cluster_test.py /root/
-COPY requirements.txt /tmp/requirements.txt
+COPY cluster_test.py /work/
+COPY requirements.txt /work/requirements.txt
 
 # Provision container

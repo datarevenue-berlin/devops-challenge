@@ -13,14 +13,30 @@ This should be straightforward on all linux and osx systems. Windows users are p
 
 
 ## Notes
-- This should take you between 20-60 minutes
+- This should take you between 20-60 minutes depending on your linux experience
 - Use python3
-- The dockerfile should inherit from `ubuntu:16.04` 
-- You are not allowed to change any files (except the dockerfile).
-- execute bootstrap.sh and email us the output along with your solution.
+- The dockerfile should inherit from `alpine:latest`
+- You are not allowed to change any files (except the Dockerfile).
 
+Due to use the base image `alpine:latest` you will run into some problems especially concerning glibc compatibility in case you can't find a solution for this you may switch to using `ubuntu:16:04` as the base image. This will bloat your image unnecessarily though. The references should help you to fix problems regarding glibc you will need experience in compiling and installing programs from source though.
+
+## Evaluation
+Your solution will be evaluated against following criteria:
+* Is it runnable?
+* Use of correct linux tools
+* Image size
+* Readability
+
+## Submission
+Please zip your solution including all files and send to us with
+the following naming schema:
+```
+dc_<name>_<last_name>.zip
+```
 
 ## References
+* [alpine apk](https://wiki.alpinelinux.org/wiki/Alpine_Linux_package_management)
+* [glibc-compat](https://github.com/sgerrand/alpine-pkg-glibc)
 * [dockerfile reference](https://docs.docker.com/engine/reference/builder/)
 * [dask distributed](http://distributed.readthedocs.io/en/latest/install.html)
 * [dask](https://dask.readthedocs.io/en/latest/install.html)
