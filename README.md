@@ -7,18 +7,21 @@ Of course this won't start multiple machines in the cloud and run a actual real 
 * [How to install docker](https://docs.docker.com/engine/installation/)
 * [How to install docker-compose](https://docs.docker.com/compose/install/)
 
-You only have to provision the docker container by implementing the dockerfile and run the bootstrap bash script. The solution can be expressed in as little as 5 lines.
+You only have to provision the docker container by implementing the dockerfile and run the bootstrap bash script. The solution can be expressed in as little as 5 lines (some more if using alpine image, see below).
 
 This should be straightforward on all linux and osx systems. Windows users are probably better off running a virtual machine with a linux distro but theoretically docker and docker-compose should also run native on Windows.
 
 
 ## Notes
+- Read the whole readme!
 - This should take you between 20-60 minutes depending on your linux experience
 - Use python3
 - The dockerfile should inherit, for minimal image size, from `alpine:latest` but `ubuntu:16:04` is also accepted
-- You are not allowed to change any files (except the Dockerfile).
+- You are not allowed to change any files (except the Dockerfile and only after the comment).
 
-Due to using the base image `alpine:latest` you will run into some problems especially concerning glibc compatibility in case you can't find a solution for this you may switch to using `ubuntu:16:04` as the base image. On dockerhub there are plenty of images that deal with the glibc problem. The references should also provide help to fix problems regarding glibc. You will need experience in compiling and installing programs from source though. Don't forget to set your locales after successful installation.
+Due to using the base image `alpine:latest` you will run into some problems especially concerning glibc compatibility in case you can't find a solution for this you may switch to `ubuntu:16:04` as the base image. 
+
+On dockerhub there are plenty of images that deal with the glibc problem. The references should also provide help to fix problems regarding glibc. You will need experience in compiling and installing programs from source though. Don't forget to set your locales after successful installation.
 
 ## Attention
 We have seen many solution where applicants use a second FROM statement. Please note that this is not a valid solution as your are basically changing the base images which decreases the difficulty of the challenge.
