@@ -15,11 +15,15 @@ This should be straightforward on all linux and osx systems. Windows users are p
 ## Notes
 - This should take you between 20-60 minutes depending on your linux experience
 - Use python3
-- The dockerfile should inherit from for minimal image size `alpine:latest` but `ubuntu:16:04` is also accepted
+- The dockerfile should inherit, for minimal image size, from `alpine:latest` but `ubuntu:16:04` is also accepted
 - You are not allowed to change any files (except the Dockerfile).
 
-Due to use the base image `alpine:latest` you will run into some problems especially concerning glibc compatibility in case you can't find a solution for this you may switch to using `ubuntu:16:04` as the base image or check dockerhub there are plenty of images on dockerhub that deal with the problem. The references should help you to fix problems regarding glibc. You will need experience in compiling and installing programs from source though. Don't forget to set your locales after successful installtion.
+Due to using the base image `alpine:latest` you will run into some problems especially concerning glibc compatibility in case you can't find a solution for this you may switch to using `ubuntu:16:04` as the base image. On dockerhub there are plenty of images that deal with the glibc problem. The references should also provide help to fix problems regarding glibc. You will need experience in compiling and installing programs from source though. Don't forget to set your locales after successful installation.
 
+## Attention
+We have seen many solution where applicants use a second FROM statement. Please note that this is not a valid solution as your are basically changing the base images which decreases the difficulty of the challenge.
+
+See the following SO discussion for more information: https://stackoverflow.com/questions/33322103/multiple-froms-what-it-means
 
 
 ## Evaluation
@@ -27,7 +31,7 @@ Your solution will be evaluated against following criteria:
 * Is it runnable?
 * Security
 * Correct use of linux tools
-* Image size
+* Image size (will be much smaller by using alpine)
 * Readability
 
 
